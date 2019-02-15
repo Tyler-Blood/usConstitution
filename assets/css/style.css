@@ -1,0 +1,25 @@
+/* removes the color from a tagged elements */
+a { color: black; } 
+
+body {
+    background-image: url("../images/oldPaper.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+ /* turns the names section of the constitution into 3 columns */
+#limheight {
+    height: 300px;
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3; 
+}
+
+#limheight li {
+    display: inline-block; 
+}
+
+/* removes the bottom margin from h2's so the back to top link doesn't look as obnoxious */
+h3 {
+  margin-bottom: -1.25rem;
+}
