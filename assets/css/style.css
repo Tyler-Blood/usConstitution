@@ -30,18 +30,24 @@ h3 {
   text-align: center;
 }
 
-#article {
-  background-image: url("../images/oldPaper.png");
-  border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+#article, #preamble, #articleShort {
+  background-color: white;
   margin: 0px;
   padding: 0px;
-  margin-top: 200px;
   border-left: 0px;
   font-family: 'Libre Baskerville', serif;
   width: 100%;
+  position: relative;
+}
+
+#preamble {
+  margin-bottom: -20px;
+}
+
+#articleShort {
+
+  padding: 200px;
+
 }
 
 #people {
@@ -52,6 +58,13 @@ h3 {
 }
 h1 {
   font-size: 60px;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 nav {
@@ -125,4 +138,89 @@ nav ul ul ul {
 
 nav ul li:hover > ul {
 	display: block;
+}
+
+.wrapper {
+  /* The height needs to be set to a fixed value for the effect to work.
+   * 100vh is the full height of the viewport. */
+  height: 100vh;
+  /* The scaling of the images would add a horizontal scrollbar, so disable x overflow. */
+  overflow-x: hidden;
+  /* Enable scrolling on the page. */
+  overflow-y: auto;
+  /* Set the perspective to 2px. This is essentailly the simulated distance from the viewport to transformed objects.*/
+  perspective: 2px;
+}
+
+.section {
+  /* Needed for children to be absolutely positioned relative to the parent. */
+  position: relative;
+  height: 100vh;
+}
+
+.parallax::after {
+  /* Display and position the pseudo-element */
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  /* Move the pseudo-element back away from the camera,
+   * then scale it back up to fill the viewport.
+   * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+  transform: translateZ(-1px) scale(1.5);
+  /* Force the background image to fill the whole element. */
+  background-size: 100%;
+  /* Keep the image from overlapping sibling elements. */ 
+  z-index: -1;
+}
+
+.bg1::after {
+  background-image: url(../images/us-constitution.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg2::after {
+  background-image: url(../images/Independence_Hall_Clocktower_in_Philadelphia.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg3::after {
+  background-image: url(../images/independence_hall_room.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg4::after {
+  background-image: url(../images/Independence-001.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg5::after {
+  background-image: url(../images/guards.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg6::after {
+  background-image: url(../images/150408_LeeBookReview.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg7::after {
+  background-image: url(../images/washington-in-philadelphia_2x.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.bg8::after {
+  background-image: url(../images/Declaration_of_Independence.jpg);
+  width: 100%;
+  background-repeat: no-repeat;
 }
