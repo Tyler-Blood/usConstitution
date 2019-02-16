@@ -1,8 +1,8 @@
 /* removes the color from a tagged elements */
-a { color: black; } 
+/* a { color: black; } /*
 
 /* importing fonts from google */
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Parisienne');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Parisienne');
 
 body {
     background-repeat: repeat;
@@ -35,7 +35,7 @@ h3 {
   margin: 0px;
   padding: 0px;
   border-left: 0px;
-  font-family: 'Libre Baskerville', serif;
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
   position: relative;
 }
@@ -46,16 +46,18 @@ h3 {
 
 #articleShort {
 
-  padding: 200px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 
 }
 
 #people {
-  font-family: 'Allura', cursive;
-  font-size: 57px;
+  font-family: 'Parisienne', cursive;
+  font-size: 80px;
   padding: 0px;
   display: inline;
 }
+
 h1 {
   font-size: 60px;
   text-align: center;
