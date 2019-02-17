@@ -65,13 +65,11 @@ nav {
 	display: inline;
 	position: absolute;
   background: rgb(10, 10, 10);
-  text-decoration-color: white;
 	z-index: 1000;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	top: 0px;
   right: 20px;
-  
 }
 
 nav ul {
@@ -100,7 +98,7 @@ nav ul li {
 	padding: 0;
 }
 
-nav ul li:hover {
+nav ul li:hover, nav ul ul li:hover {
 	background: #DDD;
 }
 
@@ -109,7 +107,6 @@ nav ul ul {
 	top: 100%;
 	left: 0;
 	background: #F6F6F6;
-	border: thin #225AA7 solid;
 	padding: 0;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
@@ -164,9 +161,9 @@ nav ul li:hover > ul {
     bottom: 0;
     left: 0;
     
-    /* Move the pseudo-element back away from the camera,
-    * then scale it back up to fill the viewport.
-    * Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
+    /* Move the pseudo-element back away from the camera, */
+    /* then scale it back up to fill the viewport. */
+    /* Because the pseudo-element is further away, it appears to move more slowly, like in real life. */
     transform: translateZ(-1px) scale(1.5);
     /* Force the background image to fill the whole element. */
     background-size: 100%;
@@ -174,6 +171,7 @@ nav ul li:hover > ul {
     z-index: -1;
   }
 
+  /* backgrounds lose parallax and less than 100% without ::after */
   .bg1::after {
     background-image: url(../images/us-constitution.jpg);
     width: 100%;
