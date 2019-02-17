@@ -7,6 +7,7 @@
 /* fixes double scroll bar issue */
 body {
   margin: 0;
+  /* 0 padding breaks parallax */
 }
 
 
@@ -63,77 +64,203 @@ h1 {
   font-family: 'Parisienne', cursive;
 }
 
-nav {
-	display: inline;
-	position: absolute;
-  background: rgb(10, 10, 10);
-	z-index: 1000;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	top: 0px;
-  right: 20px;
+@media (min-width: 850px){
+    
+    .checkbox input[type="checkbox"] {
+      display: none;
+    }
+
+    nav {
+      display: inline;
+      position: absolute;
+      background: rgb(10, 10, 10);
+      z-index: 1000;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      top: 0px;
+      right: 20px;
+    }
+    
+    nav ul {
+      /* allows words in nav to be clickable */
+      list-style: none;
+      position: relative;
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul a {
+      display: block;
+      text-decoration: none;
+      font-weight: 700;
+      line-height: 32px;
+      padding: 0 15px;
+      color: rgb(121, 114, 114);
+      font-size: 16px;
+    }
+    
+    nav ul li {
+      position: relative;
+      float: left;
+      margin: 0;
+      padding: 0;
+    }
+    
+    nav ul li:hover, nav ul ul li:hover {
+      background: #DDD;
+    }
+    
+    nav ul ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #F6F6F6;
+      padding: 0;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      display: none;
+    }
+    
+    nav ul ul li {
+      float: none;
+      min-width: 150px;
+    }
+    
+    nav ul ul a {
+      line-height: 120%;
+      padding: 10px 15px;
+    }
+    
+    nav ul ul ul {
+      top: 0;
+      left: 100%;
+    }
+    
+    nav ul li:hover > ul {
+      display: block;
+    } 
+  }
+
+  @media (max-width: 850px){
+   
+    #menuToggle  {
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  #menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0; /* hide this */
+    z-index: 2; /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+  }
+
+  /* hamburger */
+  #menuToggle span
+  {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #cdcdcd;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+
+  #menuToggle span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+
+  #menuToggle span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  }
+
+  /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+  #menuToggle .checkbox input:checked ~ span
+  {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
+  }
+
+  /*
+  * But let's hide the middle one.
+  */
+  #menuToggle .checkbox input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  /*
+  * Ohyeah and the last one should go the other direction
+  */
+  #menuToggle .checkbox input:checked ~ span:nth-last-child(2)
+  {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+  #menu
+  {
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    
+    background: #ededed;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+  #menu li
+  {
+    padding: 10px 0;
+    font-size: 22px;
+  }
+
+  /*
+  * And let's slide it in from the left
+  */
+  #menuToggle input:checked ~ ul
+  {
+    transform: none;
+  }
 }
 
-nav ul {
-  /* allows words in nav to be clickable */
-	list-style: none;
-	position: relative;
-	float: left;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul a {
-	display: block;
-	text-decoration: none;
-	font-weight: 700;
-	line-height: 32px;
-	padding: 0 15px;
-	color: rgb(121, 114, 114);
-	font-size: 16px;
-}
-
-nav ul li {
-	position: relative;
-	float: left;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li:hover, nav ul ul li:hover {
-	background: #DDD;
-}
-
-nav ul ul {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	background: #F6F6F6;
-	padding: 0;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
-	display: none;
-}
-
-nav ul ul li {
-	float: none;
-	min-width: 150px;
-}
-
-nav ul ul a {
-	line-height: 120%;
-	padding: 10px 15px;
-}
-
-nav ul ul ul {
-	top: 0;
-	left: 100%;
-}
-
-nav ul li:hover > ul {
-	display: block;
-}
 
 /* start parallax code */
   .wrapper {

@@ -12,50 +12,64 @@
 <body>
     <header>
     <nav>
-        <ul>
-            <li><a href="#article1">Article 1</a>
-                <ul>
-                    <li><a href="#section101">Section 1</a></li>
-                    <li><a href="#section102">Section 2</a></li>
-                    <li><a href="#section103">Section 3</a></li>
-                    <li><a href="#section104">Section 4</a></li>
-                    <li><a href="#section105">Section 5</a></li>
-                    <li><a href="#section106">Section 6</a></li>
-                    <li><a href="#section107">Section 7</a></li>
-                    <li><a href="#section108">Section 8</a></li>
-                    <li><a href="#section109">Section 9</a></li>
-                    <li><a href="#section110">Section 10</a></li>
+        <div id="menuToggle">
+                <!--
+                A fake / hidden checkbox is used as click reciever,
+                so you can use the :checked selector on it.
+                -->
+                <div class="checkbox">
+                <input type="checkbox" id="checkbox"/>
+                </div>
+                
+                <!-- Some spans to act as a hamburger. -->
+                <span></span>
+                <span></span>
+                <span></span>
+            <ul id="menu">
+                <li><a href="#article1">Article 1</a>
+                    <ul>
+                        <li><a href="#section101">Section 1</a></li>
+                        <li><a href="#section102">Section 2</a></li>
+                        <li><a href="#section103">Section 3</a></li>
+                        <li><a href="#section104">Section 4</a></li>
+                        <li><a href="#section105">Section 5</a></li>
+                        <li><a href="#section106">Section 6</a></li>
+                        <li><a href="#section107">Section 7</a></li>
+                        <li><a href="#section108">Section 8</a></li>
+                        <li><a href="#section109">Section 9</a></li>
+                        <li><a href="#section110">Section 10</a></li>
+                        </li>
+                    </ul>
+                <li><a href="#article2">Article 2</a>
+                    <ul>
+                        <li><a href="#section201">Section 1</a></li>
+                        <li><a href="#section202">Section 2</a></li>
+                        <li><a href="#section203">Section 3</a></li>
+                        <li><a href="#section204">Section 4</a></li>
                     </li>
-                </ul>
-            <li><a href="#article2">Article 2</a>
-                <ul>
-                    <li><a href="#section201">Section 1</a></li>
-                    <li><a href="#section202">Section 2</a></li>
-                    <li><a href="#section203">Section 3</a></li>
-                    <li><a href="#section204">Section 4</a></li>
-                </li>
-                </ul>
-            <li><a href="#article3">Article 3</a>
-                <ul>
-                    <li><a href="#section301">Section 1</a></li>
-                    <li><a href="#section302">Section 2</a></li>
-                    <li><a href="#section303">Section 3</a></li>
-                </li>
-                </ul>
-            <li><a href="#article4">Article 4</a>
-                <ul>
-                    <li><a href="#section401">Section 1</a></li>
-                    <li><a href="#section402">Section 2</a></li>
-                    <li><a href="#section403">Section 3</a></li>
-                    <li><a href="#section404">Section 4</a></li>
-                </li>
-                </ul>
-            <li><a href="#article5">Article 5</a></li>
-            <li><a href="#article6">Article 6</a></li>
-            <li><a href="#article7">Article 7</a></li>
-            <li><a href="#names">Delegates</a></li>
-            <li><a href="#home">Top</a></li>
-        </ul>
+                    </ul>
+                <li><a href="#article3">Article 3</a>
+                    <ul>
+                        <li><a href="#section301">Section 1</a></li>
+                        <li><a href="#section302">Section 2</a></li>
+                        <li><a href="#section303">Section 3</a></li>
+                    </li>
+                    </ul>
+                <li><a href="#article4">Article 4</a>
+                    <ul>
+                        <li><a href="#section401">Section 1</a></li>
+                        <li><a href="#section402">Section 2</a></li>
+                        <li><a href="#section403">Section 3</a></li>
+                        <li><a href="#section404">Section 4</a></li>
+                    </li>
+                    </ul>
+                <li><a href="#article5">Article 5</a></li>
+                <li><a href="#article6">Article 6</a></li>
+                <li><a href="#article7">Article 7</a></li>
+                <li><a href="#names">Delegates</a></li>
+                <li><a href="#home">Top</a></li>
+            </ul>
+        </div>
     </nav>
 
     </header>
